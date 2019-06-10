@@ -87,7 +87,7 @@ app.get('/funcionario/Id', (req, res) =>{
     });
 });
 
-app.get('/funcionario/add', (req,res) => {
+app.post('/funcionario/add', (req,res) => {
 const {Idade, Nome, Cargo} = req.query;
 
     if(Idade && Nome && Cargo){
@@ -106,7 +106,7 @@ const {Idade, Nome, Cargo} = req.query;
     }
 });
 
-app.get('/funcionario/del', (req, res) => {
+app.delete('/funcionario/del', (req, res) => {
     const {Id} = req.query;
 
     if(Id){
@@ -125,7 +125,7 @@ app.get('/funcionario/del', (req, res) => {
     }
 });
 
-app.get('/funcionario/upd', (req, res) => {  
+app.put('/funcionario/upd', (req, res) => {  
     const {Id, Atributo, Valor} = req.query;
 
     if(Id && Atributo && Valor){
