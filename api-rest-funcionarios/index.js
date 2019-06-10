@@ -92,8 +92,7 @@ app.get('/funcionario/Id', (req, res) =>{
 });
 
 app.post('/funcionario', (req,res) => {
-const {Idade, Nome, Cargo} = req.query;
-console.log('alo ', req.query)
+    const {Idade, Nome, Cargo} = req.query;
 
     if(Idade && Nome && Cargo){
         const INSERT_DISCOS_QUERY = `INSERT INTO funcionarios (Idade, Nome, Cargo) VALUES(${Idade},'${Nome}','${Cargo}')`
@@ -111,7 +110,7 @@ console.log('alo ', req.query)
     }
 });
 
-app.delete('/funcionario/del', (req, res) => {
+app.delete('/funcionario', (req, res) => {
     const {Id} = req.query;
 
     if(Id){
@@ -130,7 +129,7 @@ app.delete('/funcionario/del', (req, res) => {
     }
 });
 
-app.put('/funcionario/upd', (req, res) => {  
+app.put('/funcionario', (req, res) => {  
     const {Id, Atributo, Valor} = req.query;
 
     if(Id && Atributo && Valor){
