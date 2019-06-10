@@ -1,8 +1,12 @@
 const express = require('express');
 const cors = require('cors');
 const mysql = require('mysql');
+const morgan = require('morgan');
 
 const app = express();
+
+app.use(cors());
+app.use(morgan());
 
 const connection = mysql.createConnection({
     host: 'localhost',
@@ -17,7 +21,7 @@ connection.connect(erro =>{
     }
 });
 
-app.use(cors());
+
 
 app.get('/', (req, res) => {
     const CRIA_FUNCIONARIOS_DB_QUERY = 'CREATE SCHEMA IF NOT EXISTS funcionarios_db';
@@ -87,8 +91,9 @@ app.get('/funcionario/Id', (req, res) =>{
     });
 });
 
-app.post('/funcionario/add', (req,res) => {
+app.post('/funcionario', (req,res) => {
 const {Idade, Nome, Cargo} = req.query;
+console.log('alo ', req.query)
 
     if(Idade && Nome && Cargo){
         const INSERT_DISCOS_QUERY = `INSERT INTO funcionarios (Idade, Nome, Cargo) VALUES(${Idade},'${Nome}','${Cargo}')`
