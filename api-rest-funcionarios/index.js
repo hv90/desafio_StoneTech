@@ -6,7 +6,7 @@ const morgan = require('morgan');
 const app = express();
 
 app.use(cors());
-app.use(morgan());
+app.use(morgan('combined'));
 
 const connection = mysql.createConnection({
     host: 'localhost',

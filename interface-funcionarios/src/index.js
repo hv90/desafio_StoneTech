@@ -1,41 +1,46 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom' ;
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import App from './App';
 import Delete from './delete';
 import Insert from './insert';
 import Update from './update';
-import Search from './search';
+
+
 import * as serviceWorker from './serviceWorker';
 
 const routing = (
-    <Router>
-      <div>
-        <ul>
+
+    <Router >
+    <div >
+        <nav className="navbar navbar-dark" style={{backgroundColor: "#000000"}}>
+        <ul className="nav navbar-nav">
             <li>
-                <Link to="/">Home</Link>
+                <Link to="/"  style={{color: 'white'}}>Search</Link>
             </li>
             <li>
-                <Link to="/insert">Insert</Link>
+                <Link to="/insert"  style={{color: 'white'}}>Insert</Link>
             </li>
             <li>
-                <Link to="/delete">Delete</Link>
+                <Link to="/delete"  style={{color: 'white'}}>Delete</Link>
             </li>
             <li>
-                <Link to="/update">Update</Link>
-            </li>
-            <li>
-                <Link to="/search">Search</Link>
+                <Link to="/update"  style={{color: 'white'}}>Update</Link>
             </li>
         </ul>
+        </nav>
+        
         <Route exact path="/" component={App} />
         <Route path="/insert" component={Insert} />
         <Route path="/delete" component={Delete}/>
         <Route path="/update" component={Update}/>
-        <Route path="/search" component={Search}/>
-      </div>
+        <Route path="/search" component={App}/>
+        
+    </div>
     </Router>
+    
   )
 
 

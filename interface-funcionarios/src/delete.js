@@ -21,14 +21,29 @@ class Delete extends App {
 
     return (
     <div className="App">
-      <h1>Funcionários</h1>
-      {funcionarios.map(this.renderFuncionarios)}
-      <h1>Excluir Funcionário: </h1>digitar Id:
-      <input
-        value={funcionario.Id}
-        onChange={e => this.setState({funcionario: {...funcionario, Id: e.target.value}})}
-      />
-      <button onClick={this.delFuncionario}>Deletar Funcionário</button>
+      <div className="page-header">
+      <h1>Excluir Funcionário</h1>
+      </div>
+      <div className="container">
+          <div className="row">
+            <form className="form-inline">
+
+              <div className="form-group">
+                <label><h4>Id:</h4></label>&nbsp;&nbsp;&nbsp;
+                  <input
+                    type = "number" placeholder = "Id do Funcionário" className="form-control"
+                    onChange={e => this.setState({funcionario: {...funcionario, Id: e.target.value}})}
+                  />
+              </div>
+              
+              <button type="button" style={{backgroundColor: "#00002B", color: "#FFFFFF"}} className="btn btn-default" 
+                  onClick={this.delFuncionario}>
+                  Deletar Funcionário
+              </button> 
+
+            </form>
+          </div>
+      </div>      
     </div>
     )
   }
