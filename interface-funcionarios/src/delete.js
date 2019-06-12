@@ -17,7 +17,7 @@ class Delete extends App {
   }
   
   render() {
-    const {funcionarios, funcionario} = this.state;
+    const { funcionario} = this.state;
 
     return (
     <div className="App">

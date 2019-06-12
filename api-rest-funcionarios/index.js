@@ -79,16 +79,22 @@ app.get('/funcionarios', (req, res) =>{
 app.get('/funcionario/Id', (req, res) =>{  
     const {Id} = req.query;
     const SELECT_FUNCIONARIO_BY_ID_QUERY = `SELECT * FROM funcionarios WHERE Id LIKE ${Id}`
-    connection.query(SELECT_FUNCIONARIO_BY_ID_QUERY, (err, results) => {
-        if(err){
-            return res.send(err);
-        }
-        else{
-            return res.json({
-                data: results
-            });
-        }
-    });
+    if(Id){
+        connection.query(SELECT_FUNCIONARIO_BY_ID_QUERY, (err, results) => {
+        
+            if(err){
+                return res.send(err);
+            }
+            else{
+                return res.json({
+                    data: results
+                });
+            }
+        });
+    }else{
+        res.send('Query Id para encontrar funcionário por Id');
+    }
+
 });
 
 app.post('/funcionario', (req,res) => {

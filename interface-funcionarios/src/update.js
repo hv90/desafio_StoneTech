@@ -39,7 +39,6 @@ class Update extends App {
 
     
   render() {
-    const {funcionarios} = this.state;
 
     return (
     <div className="App">
@@ -52,7 +51,7 @@ class Update extends App {
             <form className="form-inline">
                 <div className="col-sm-3">
                     <div className="form-group">
-                        <label><h4>Id:</h4></label>
+                        <label><h4>Id:&nbsp;&nbsp;&nbsp;</h4></label>
                         <input type="number" placeholder="ex: 1" className="form-control"
                             onChange={e =>  this.idHandler(e)}
                         />
@@ -61,7 +60,7 @@ class Update extends App {
                 
                 <div className="col-sm-3">
                     <div className="form-group">
-                        <label><h4>Atributo:</h4></label>
+                        <label><h4>Atributo:&nbsp;&nbsp;&nbsp;</h4></label>
                         <select  className="form-control" onChange={e => this.atributoHandler(e)}>
                             <option value="">--Selecione--</option>
                             <option >Idade</option>
@@ -73,7 +72,7 @@ class Update extends App {
 
                 <div className="col-sm-3">
                     <div className="form-group">
-                        <label><h4>Valor:</h4></label>
+                        <label><h4>Valor:&nbsp;&nbsp;&nbsp;</h4></label>
                         <input type="text" className="form-control" placeholder="Valor para sobrescrever"
                         onChange={e =>  this.valorHandler(e)}
                         />
@@ -85,10 +84,6 @@ class Update extends App {
                     onClick={this.updFuncionario}>Atualizar Funcionário</button>
                 </div>
 
-                
-
-                
-        
             </form>
         </div>
     </div>

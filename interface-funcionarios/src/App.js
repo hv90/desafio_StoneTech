@@ -108,7 +108,7 @@ class App extends React.Component{
 
             <div className="row">
                 <h1>Resultados da Busca</h1>
-                <h2>Idade  -  Nome  -  Cargo</h2>
+                <h2>Nome  -  Idade  -  Cargo</h2>
                 {funcionarios.filter(search(searchTerm, atributo)).map(this.renderFuncionarios)}
             </div>
             <div className="row"><br/><br/><br/><br/><br/><br/></div>
